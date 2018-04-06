@@ -1,32 +1,21 @@
 import random
 import math ## use ceiling function
 
-from helper import read_corpus, splitToSentences
-
-def get_substring(text, start_position, end_position):
-    substring = ""
-    for i in range(start_position, end_position):
-        substring += str(text[i])
-        substring += " "
-    return substring
-
-def removeChar(text, character):
-    converted_text = ''.join(ch for ch in text if ch != character)
-    return converted_text
+from helper import read_corpus, splitToSentences, get_substring, remove_char
 
 #min sample size is smaller than size of corpus
 def get_text_sample(corpus_folder, min_sample_size):
 
     corpus_docs = read_corpus(corpus_folder)
 
-    file = open("samples.txt","w")
+    file = open("samples1.txt","w")
 
     for i in corpus_docs:
 
         sentences = splitToSentences(i);
         corpus_sentences = []
         for sentence in sentences:
-            corpus_sentences.append(removeChar(sentence, '\n'))
+            corpus_sentences.append(remove_char(sentence, '\n'))
 
         text_size = len(corpus_sentences)
         sample_size = math.ceil(text_size * .05)
