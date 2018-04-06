@@ -119,3 +119,14 @@ def read_corpus(corpus_root):
         corpus_docs.append(corpus.raw(titles))
 
     return corpus_docs
+
+def get_substring(text, start_position, end_position):
+    substring = ""
+    for i in range(start_position, end_position):
+        substring += str(text[i])
+        substring += " "
+    return substring
+
+def remove_char(text, character):
+    converted_text = ''.join(ch for ch in text if ch != character)
+    return converted_text
