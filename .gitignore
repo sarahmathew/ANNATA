@@ -2,3 +2,8 @@ interviewer_removed/
 samples.txt
 .DS_Store
 __pycache__/
+
+POS_PA_tagger/stanford_NLP
+POS_PA_tagger/transcripts
+POS_PA_tagger/PA_output
+POS_PA_tagger/POS_output
